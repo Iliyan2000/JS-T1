@@ -10,6 +10,9 @@ export default class Application extends EventEmitter {
 
   constructor() {
     super();
+	
+	this._beat = new Beat();
+	this._beat.addEventListener(Beat.events.BIT, () => {});
 
     const lyrics = ["Ah", "ha", "ha", "ha", "stayin' alive", "stayin' alive"];
     let count = 0;
@@ -21,5 +24,9 @@ export default class Application extends EventEmitter {
     document.querySelector(".main").appendChild(message);
 
     this.emit(Application.events.READY);
+  }
+  
+  _create() {
+	  
   }
 }
