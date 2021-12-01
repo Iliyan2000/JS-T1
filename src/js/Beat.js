@@ -8,6 +8,7 @@ export default class Beat extends EventEmitter {
   }
 
   constructor() {
+	  super();
     setInterval(() => {
       console.log("bit");
 	  this.emit(Beat.events.BIT);
